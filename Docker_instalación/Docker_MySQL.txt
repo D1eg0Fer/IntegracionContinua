@@ -1,0 +1,19 @@
+Docker_MySQL
+
+-Instalación Docker
+
+apt-get update
+apt-get install docker.io
+docker pull mysql
+
+-Creación directorio persistente
+
+mkdir /var/lib/mysql -p
+
+-Inicio contenedor
+
+docker run -d --name mysql-server -p 3306:3306 -v /var/lib/mysql:/var/lib/mysql -e "MYSQL_ROOT_PASSWORD=XXXXXXXXX" mysql
+
+-Verificación contenido directorio persistente
+
+ls -la /var/lib/mysql

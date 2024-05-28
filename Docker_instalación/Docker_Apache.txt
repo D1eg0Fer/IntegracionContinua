@@ -1,0 +1,20 @@
+Docker_MySQL
+
+-Instalación Docker
+
+apt-get update
+apt-get install docker.io
+docker pull httpd
+
+-Creación directorio persistente
+
+docker volume create apache-data
+docker volume inspect apache-data
+
+-Inicio contenedor
+
+docker run -d --name apache-server -p 80:80 -v apache-data:/usr/local/apache2/htdocs httpd
+
+-Verificación contenido directorio persistente
+
+ls /var/lib/docker/volumes/apache-data/_data
