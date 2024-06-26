@@ -1,6 +1,6 @@
 pipeline {
   agent {
-    label "docker-test"
+    label "principal"
   }
   stages {
     stage ('Run Docker Compose') {
